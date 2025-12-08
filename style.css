@@ -1,1 +1,179 @@
+/* Tipografia base */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Poppins:wght@400;600&display=swap");
 
+:root {
+  /* Paleta clara */
+  --bg: #fdfdfd;
+  --text: #222;
+  --muted: #555;
+  --accent1: #FF6B6B;
+  --accent2: #2563EB;
+  --accent3: #10B981;
+  --card: #ffffff;
+  --border: #e5e5e5;
+  --radius: 20px;
+  --shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Layout base */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page-wrapper {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Cabeçalho vibrante */
+header {
+  padding: 4rem 0 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3));
+  color: #fff;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  background: linear-gradient(90deg, #fff, #FFD700, var(--accent1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+header h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin-top: 0.75rem;
+  color: #f0f0f0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #FFD700; }
+  to { text-shadow: 0 0 25px var(--accent1); }
+}
+
+/* Cards modernos */
+.summary, .preamble, .explanation, .participation, .benefits, .requirements {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.summary:hover, .preamble:hover,
+.explanation:hover, .participation:hover,
+.benefits:hover, .requirements:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* Títulos internos */
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  border-left: 6px solid var(--accent1);
+  padding-left: 0.5rem;
+}
+
+/* Links modernos */
+a {
+  color: var(--accent2);
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent3));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+a:hover {
+  color: var(--accent1);
+}
+
+/* Rodapé */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* =======================
+   🌙 MODO ESCURO AUTOMÁTICO
+   ======================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #eaeaea;
+    --muted: #aaa;
+    --card: #1e1e1e;
+    --border: #333;
+    --shadow: 0 12px 30px rgba(0,0,0,0.6);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  header {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  }
+
+  header h2 {
+    color: #ddd;
+  }
+
+  h3 {
+    color: var(--accent3);
+    border-left-color: var(--accent2);
+  }
+
+  a {
+    color: var(--accent3);
+  }
+
+  a:hover {
+    color: var(--accent1);
+  }
+
+  footer {
+    color: var(--muted);
+    border-top-color: var(--border);
+  }
+}
