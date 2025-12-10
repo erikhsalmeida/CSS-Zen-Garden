@@ -1,0 +1,90 @@
+/*
+Principal: #1f295c
+background: #fbfcfd
+destaque: #ff1492
+*/
+
+/*
+Exercícios - posicionamento
+
+O foco dessa atividade será reposicionar os elementos da nossa página!
+
+1. Defina o elemento .page-wrapper como referência para posicionamento.
+2. Faça com que o painel .explanation ocupe 60% da largura disponível, mas crie um espaçamento a direita de 35% utilizando margin .
+- Adicione uma borda à direita do painel de 1px, com a cor #1f295c
+- Adicione um espaçamento interno de 2% no lado direito do painel.
+3. Agora mova o menu de designs para a direita da página, ocupando o espaço em branco deixado pelo elemento .explanation .
+- Faça-o iniciar na parte superior da página, após a parte de introdução (por exemplo, aplicando top: 560px ).
+- Faça-o iniciar após o elemento .explanation (por exemplo, aplicando left: 62% ).
+- Adicione um espaçamento interno horizontal de 2% no menu para centralizá-lo.
+    */
+
+.page-wrapper {
+        position: relative;
+    }
+
+.explanation {
+        width: 60%;
+        border-right: 1px solid #1f295c;
+        padding-right: 2%;
+    }
+
+#design-selection {
+        position: absolute;
+        top: 560px;
+        left: 62%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+#zen-explanation {
+        height: 350px;
+    }    
+
+.page-wrapper {
+        width: 80%;
+        max-width: 1280px;
+        margin: auto;
+    }
+
+#zen-intro {
+        height: 550px;
+    }
+
+#design-archives {
+        display: none;
+    }
+
+#zen-intro header {
+        background: #1f295c;
+        color: #fbfcfd;
+    }
+
+#zen-intro header h1, #zen-intro header h2 {
+        display: inline-block;
+        margin: 0 1em;
+    }
+
+#zen-intro header h1 {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+aside ul {
+        list-style-type: none;
+    }
+
+    aside ul li {
+        margin: 1em;
+        text-align: center;
+    }
+
+.main-footer {
+        margin: 4%;
+    }
+
+.main-footer a {
+        border: 2px solid #1f295c;
+        padding: 0.5em;
+        display: inline-block;
+    }
